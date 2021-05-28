@@ -17,7 +17,7 @@ const notes = [
 console.log(notes)      
 
 const noteAboutToday = {
-        id: 1,
+        id: 3,
         subject: "basic js",
         date: "05/27/21",
         feeling: "relaxed",
@@ -25,7 +25,7 @@ const noteAboutToday = {
 }
 
 notes.push(noteAboutToday)
-
+g
 console.log(notes)
 
 for (const note of notes) {
@@ -44,3 +44,25 @@ for (const note of notes) {
         console.log(note)
     }
 }
+
+const createNote = (note) =>  {
+    const lastIndex = notes.length - 1
+    const currentLastNote = notes[lastIndex]
+    const maxId = currentLastNote.id
+    const idForNewNote = maxId + 1
+
+    note.id = idForNewNote
+    notes.push(note)
+    }
+
+    const moreNewerNote = {
+        subject: "Space Java",
+        date: "05/26/21052",
+        feeling: "futuristic",
+        timeSpent: "years"
+    }
+
+    createNote(moreNewerNote)
+
+    console.log(notes)
+     
