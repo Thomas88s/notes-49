@@ -36,3 +36,11 @@ for (const note of notes) {
  I feel ${note.feeling}
  --------   `)
 }
+
+const searchTerm = "energetic"
+
+for (const note of notes) {
+    if (note.feeling === searchTerm) {
+        console.log(note)
+    }
+}
