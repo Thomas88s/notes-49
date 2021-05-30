@@ -1,17 +1,26 @@
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date+' '+time;
+ 
+
+
 const notes = [
     {
         id: 1,
         subject: "HTML",
         date: "05/25/21",
         feeling: "confident",
-        timeSpent: "6 hours"
+        timeSpent: "6 hours",
+        dateCreated: "05/19/21"
     },
     {
         id: 2,
         subject: "CSS",
         date: "05/26/21",
         feeling: "energetic",
-        timeSpent: "5 hours"
+        timeSpent: "5 hours",
+        dateCreated: "05/19/21"
     }
 ]
 console.log(notes)      
@@ -21,11 +30,11 @@ const noteAboutToday = {
         subject: "basic js",
         date: "05/27/21",
         feeling: "relaxed",
-        timeSpent: "4 hrs"
+        timeSpent: "4 hrs",
+        dateCreated: "05/19/21"
 }
 
 notes.push(noteAboutToday)
-g
 console.log(notes)
 
 for (const note of notes) {
@@ -51,18 +60,24 @@ const createNote = (note) =>  {
     const maxId = currentLastNote.id
     const idForNewNote = maxId + 1
 
+    note.dateCreated = dateTime
     note.id = idForNewNote
     notes.push(note)
     }
 
     const moreNewerNote = {
         subject: "Space Java",
-        date: "05/26/21052",
         feeling: "futuristic",
-        timeSpent: "years"
+        timeSpent: "years",
+        dateCreated: "05/26/21052"
     }
 
+    const newNote = {
+        subject: "Testing date/time",
+        feeling: "good",
+        timeSpent: "1 hour",
+    }
     createNote(moreNewerNote)
-
+    createNote(newNote)
     console.log(notes)
      
